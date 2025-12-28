@@ -1,0 +1,19 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+}
+header a{ padding-right: 16px; color: var(--color-text);  }
+
+.header-left, .header-right{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.PreviewList{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+}
