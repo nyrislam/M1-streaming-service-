@@ -1,0 +1,65 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+}
+header a {
+  padding-right: 16px;
+  color: var(--color-text);
+}
+
+.header-left,
+.header-right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.CardsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+  justify-content: space-between;
+}
+.Cards {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  width: 100%;
+}
+.controlCardList {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.Card {
+  width: calc(25% - 7.5px);
+  flex-basis: 20%;
+  flex-grow: 1;
+  height: 550px;
+  width: 350px;
+}
+.Card img {
+  height: 100%;
+  width: 100%;
+}
+.CardInfo {
+  display: flex;
+}
+.CardInfo-right {
+  width: 30%;
+  padding: 16px;
+}
+.CardInfo-left {
+  width: 70%;
+  padding: 16px;
+}
+.CardInfo-left h1 {
+  font-size: 40;
+}
+.CardInfo-left-advanced {
+  display: flex;
+  padding: 8px;
+  gap: 8px;
+}
