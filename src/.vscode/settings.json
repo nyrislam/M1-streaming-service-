@@ -37,6 +37,10 @@
       "pathPattern": "**",
       "priorities": [
         {
+          "condition": "name === '.vscode'",
+          "priority": 1001
+        },
+        {
           "condition": "name === 'app'",
           "priority": 1000
         },
@@ -50,7 +54,9 @@
         },
         {
           "condition": "name === 'features'",
-          "priority": 998
+          "priority": 998,
+          "referenceFile": "widgets",
+          "offset": -1
         },
         {
           "condition": "name === 'entities'",
