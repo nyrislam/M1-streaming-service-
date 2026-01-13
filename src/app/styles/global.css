@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg);
+  font-family: var(--font-main);
+  color: var(--color-text);
+}
+
+#root {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h1 {
+  font-size: var(--font-size-b);
+  color: var(--color-primary);
+}
+h2 {
+  font-size: var(--font-size-l);
+}
+h3 {
+  font-size: var(--font-size-m);
+}
+a,
+p {
+  font-size: var(--font-size-s);
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.Button {
+  font-size: 18px;
+  width: 80px;
+  height: 42px;
+  border: 0px solid;
+  border-radius: 8px;
+  background: var(--color-primary);
+  color: var(--color-text);
+}
