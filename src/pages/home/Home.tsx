@@ -1,24 +1,15 @@
-import { useGetСollectionsTopAllQuery } from '../../entities/movie/api/endpointsKinopoiskApi';
+import { TOP_LISTS } from '../../constants';
+import TopList from './ui/TopList';
 
 export default function Movies() {
-  const { data, error, isLoading } = useGetСollectionsTopAllQuery({
-    type: 'TOP_POPULAR_ALL',
-    page: 1,
-  });
-  if (isLoading) return <h2>Loading</h2>;
   return (
     <div className="lex flex-col min-h-screen">
-      Home
-      <ul>
-        {data.items.map(el => (
-          <li key={el.kinopoiskId}>
-            <img
-              src={el.posterUrl}
-              alt={el.nameRu || el.nameOriginal || el.nameEn}
-            />
-          </li>
-        ))}
-      </ul>
+      {TOP_LISTS.map(item => (
+        <section>
+          <h2>{item.title}</h2>
+          <TopList type={item.value} />
+        </section>
+      ))}
     </div>
   );
 }

@@ -21,7 +21,7 @@ export default function App() {
         },
         ...MOVIE_LISTS.map(el => ({
           path: el.url,
-          element: <List />,
+          element: <List value={el.value} />,
         })),
         {
           path: '/films/:id',

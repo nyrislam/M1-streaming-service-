@@ -37,7 +37,7 @@ header a {
   width: calc(25% - 7.5px);
   flex-basis: 20%;
   flex-grow: 1;
-  height: 550px;
+  height: 425px;
   width: 350px;
 }
 .Card img {
