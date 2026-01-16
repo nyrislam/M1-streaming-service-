@@ -6,8 +6,9 @@ import './styles/main.css';
 
 import { createBrowserRouter, RouterProvider } from 'react-router';
 
-import { MOVIE_LISTS } from '../constants';
-import List from '../pages/list/List';
+import { MOVIE_LISTS, TOP_LISTS } from '../constants';
+import FilmsList from '../pages/list/FilmsList';
+import TopList from '../pages/list/TopList';
 
 export default function App() {
   const router = createBrowserRouter([
@@ -21,7 +22,11 @@ export default function App() {
         },
         ...MOVIE_LISTS.map(el => ({
           path: el.url,
-          element: <List value={el.value} />,
+          element: <FilmsList />,
+        })),
+        ...TOP_LISTS.map(el => ({
+          path: el.url,
+          element: <TopList />,
         })),
         {
           path: '/films/:id',
