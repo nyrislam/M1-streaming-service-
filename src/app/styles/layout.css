@@ -37,7 +37,11 @@ header a {
   width: calc(25% - 7.5px);
   flex-basis: 20%;
   flex-grow: 1;
+<<<<<<< HEAD
   height: 425px;
+=======
+  height: 450px;
+>>>>>>> fc41298bbc62b017d2e0d0506097a8efa5ccbba0
   width: 350px;
 }
 .Card img {

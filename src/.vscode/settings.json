@@ -1,6 +1,7 @@
 {
   "explorerSort.rules": [
     {
+<<<<<<< HEAD
       "name": "FSD Structure",
       "pathPattern": "**/src/**",
       "priorities": [
@@ -33,14 +34,19 @@
       ]
     },
     {
+=======
+>>>>>>> fc41298bbc62b017d2e0d0506097a8efa5ccbba0
       "name": "Auto-generated for **",
       "pathPattern": "**",
       "priorities": [
         {
+<<<<<<< HEAD
           "condition": "name === '.vscode'",
           "priority": 1001
         },
         {
+=======
+>>>>>>> fc41298bbc62b017d2e0d0506097a8efa5ccbba0
           "condition": "name === 'app'",
           "priority": 1000
         },
