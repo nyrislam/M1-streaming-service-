@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import { MOVIE_LISTS, TOP_LISTS } from '../../../constants';
@@ -10,6 +11,7 @@ import Pagination from '../../../entities/movie/ui/Pagination';
 import Button from '../../../shared/ui/Button';
 
 export default function FindList({ find }) {
+  const [currentPage, setCurrentPage] = useState(1);
   const navigate = useNavigate();
   const goBack = () => navigate(-1);
   const location = useLocation();
@@ -21,12 +23,12 @@ export default function FindList({ find }) {
 
   const filmsListQuery = useGetFilmsListQuery({
     type: movieType?.value,
-    page: 1,
+    page: currentPage,
   });
 
   const collectionsTopAllQuery = useGetСollectionsTopAllQuery({
     type: movieType?.value,
-    page: 1,
+    page: currentPage,
   });
 
   const { data, isLoading } =
@@ -44,7 +46,12 @@ export default function FindList({ find }) {
         {data.items.map(el => (
           <Card movies={el} />
         ))}
-        {data?.totalPages && <Pagination totalPages={data.totalPages} />}
+        {data?.totalPages && (
+          <Pagination
+            setCurrentPage={setCurrentPage}
+            totalPages={data.totalPages}
+          />
+        )}
       </ul>
     </section>
   );
