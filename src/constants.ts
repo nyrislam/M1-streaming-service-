@@ -26,15 +26,4 @@ export const MOVIE_LISTS = [
     url: '/serials',
     value: 'TV_SERIES',
   },
-  {
-<<<<<<< HEAD
-    title: 'Show',
-    url: '/show',
-    value: 'TV_SHOW',
-=======
-    title: 'Сartoons',
-    url: '/cartoons',
-    value: 'FILM',
->>>>>>> fc41298bbc62b017d2e0d0506097a8efa5ccbba0
-  },
 ];

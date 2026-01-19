@@ -6,10 +6,11 @@ export default function Pagination({ totalPages }) {
   for (let i = 1; i < totalPages + 1; i++) {
     page.push(i);
   }
+  const handlePageClick = item => console.log('page', item);
   return (
     <div className="controlCardList">
       {page.map(el => (
-        <Button>{el}</Button>
+        <Button onClick={() => handlePageClick(el)}>{el}</Button>
       ))}
     </div>
   );
