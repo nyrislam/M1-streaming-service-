@@ -33,9 +33,8 @@ export default function FindList({ find }) {
 
   const { data, isLoading } =
     find === 'Films' ? filmsListQuery : collectionsTopAllQuery;
-  console.log('f', data?.totalPages);
-
-  if (isLoading) return <p>isLoading: {isLoading}</p>;
+  console.log('FindList');
+  if (isLoading) return <p className="animate-spin">isLoading: {isLoading}</p>;
   return (
     <section className="py-4">
       <div className="lex flex gap-4">
@@ -50,6 +49,7 @@ export default function FindList({ find }) {
           <Pagination
             setCurrentPage={setCurrentPage}
             totalPages={data.totalPages}
+            currentPage={currentPage}
           />
         )}
       </ul>
