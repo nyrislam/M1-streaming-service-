@@ -2,12 +2,9 @@ import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import { MOVIE_LISTS, TOP_LISTS } from '../../../constants';
-import {
-  useGetFilmsListQuery,
-  useGetСollectionsTopAllQuery,
-} from '../../../entities/movie/api/endpointsKinopoiskApi';
 import Card from '../../../entities/movie/ui/Card';
 import Pagination from '../../../entities/movie/ui/Pagination';
+import useMoviesQuery from '../../../features/hook/useMoviesQuery';
 import Button from '../../../shared/ui/Button';
 
 export default function FindList({ find }) {
@@ -21,19 +18,8 @@ export default function FindList({ find }) {
       ? MOVIE_LISTS.find(el => el.url === location.pathname)
       : TOP_LISTS.find(el => el.url === location.pathname);
 
-  const filmsListQuery = useGetFilmsListQuery({
-    type: movieType?.value,
-    page: currentPage,
-  });
+  const { data, isLoading } = useMoviesQuery({ movieType, currentPage });
 
-  const collectionsTopAllQuery = useGetСollectionsTopAllQuery({
-    type: movieType?.value,
-    page: currentPage,
-  });
-
-  const { data, isLoading } =
-    find === 'Films' ? filmsListQuery : collectionsTopAllQuery;
-  console.log('FindList');
   if (isLoading) return <p className="animate-spin">isLoading: {isLoading}</p>;
   return (
     <section className="py-4">
